@@ -1,0 +1,120 @@
+<div class="container">
+
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Pipes</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>upercase</td>
+        <td>{{nombre | uppercase}}</td>
+
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>lowercase</td>
+        <td>{{nombre | lowercase}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>slice:3</td>
+        <td>{{nombre | slice: 3}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>slice:0:3</td>
+        <td>{{nombre | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <td>{{arreglo}}</td>
+        <td>slice:1:5</td>
+        <td>{{arreglo | slice:1:5}}</td>
+      </tr>
+      <tr>
+        <td>PI</td>
+        <td>number</td>
+        <td>{{PI | number:'1.0-2'}}</td>
+      </tr>
+      <tr>
+        <td>PercentPipe</td>
+        <td>percent:2.2-2</td>
+        <td>{{percentPipe | percent:'2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>CurrencyPipe</td>
+        <td>salario:2.2-2</td>
+        <td>{{salario | currency:'EUR':'symbol':'4.1-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{valorDePromesa}}</td>
+        <td>async</td>
+        <td>{{valorDePromesa | async}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date</td>
+        <td>{{fecha | date}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:'medium</td>
+        <td>{{fecha | date:'medium'}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:'MMMM - dd</td>
+        <td>{{fecha | date:'MMMM - dd'}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre2}}</td>
+        <td>capitalizado - pipe creado</td>
+        <td>{{nombre2 | capitalizado}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre2}}</td>
+        <td>capitalizado con params - pipe creado</td>
+        <td>{{nombre2 | capitalizado:false}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre2}}</td>
+        <td><button (click)="activar = !activar"
+        type="button" class="btn btn-outline-primary" >On/Off</button>
+      </td>
+        <td>{{nombre2 | hideclave:activar}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>slice</h3>
+  <h6>Slice:5:20</h6>
+<ul></ul>
+<li *ngFor="let item of arreglo | slice:5:20">{{item}}</li>
+
+<h4>JSON PIPE</h4>
+
+<pre>
+
+  {{heroe | json}}
+
+</pre>
+
+<h4>Youtube - <small>Video</small></h4>
+<p><i>Utilizando el pipe domseguro</i></p>
+
+<iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/' " frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+
+
+
+</div>
